@@ -13,6 +13,8 @@ public class RankGameManager : MonoBehaviour
     [Header("설정")]
     public int maxRankLevel = 7;
 
+    public int maxRankCount = 20; // 최대 생성 개수
+
     public List<DraggableRank> ranks = new List<DraggableRank>();
 
     void Start()
@@ -27,17 +29,23 @@ public class RankGameManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.D))
         {
-            SpawnNewRank();
+            if (ranks.Count < maxRankCount)
+            {
+                SpawnNewRank();
+            }
         }
     }
 
     public void SpawnNewRank()
     {
+        if (ranks.Count >= maxRankCount)
+            return;
+
         Vector2 spawnPos = GetRandomPosition();
 
         GameObject obj = Instantiate(rankPrefab, spawnPos, Quaternion.identity);
 
-        DraggableRank rank = obj.GetComponent<DraggableRank>();
+        DraggableRank rank = obj.AddComponent<DraggableRank>();
 
         rank.SetRankLevel(1);
 

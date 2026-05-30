@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 761528002519410037}
   - component: {fileID: 8489241830755375533}
-  - component: {fileID: 1689688648561094729}
   - component: {fileID: -4562700224793085589}
   m_Layer: 0
   m_Name: "\uBD88_0"
@@ -28,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 5402175633466299535}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.217247, y: 0.9852469, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -93,24 +92,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!114 &1689688648561094729
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5402175633466299535}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f76fd71abe67b147a8c04a0d6607fe7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DraggableRank
-  rankLevel: 1
-  dragSpeed: 30
-  snapBackSpeed: 20
-  mergeDistance: 1
-  spriteRenderer: {fileID: 0}
-  gameManager: {fileID: 0}
 --- !u!61 &-4562700224793085589
 BoxCollider2D:
   m_ObjectHideFlags: 0

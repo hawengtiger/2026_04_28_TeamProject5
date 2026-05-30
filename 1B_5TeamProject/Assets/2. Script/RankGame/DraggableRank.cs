@@ -29,9 +29,7 @@ public class DraggableRank : MonoBehaviour
     void Awake()
     {
         mainCamera = Camera.main;
-
         spriteRenderer = GetComponent<SpriteRenderer>();
-
         gameManager = FindAnyObjectByType<RankGameManager>();
 
         // 게임매니저의 박스 영역 가져오기
@@ -62,7 +60,7 @@ public class DraggableRank : MonoBehaviour
     void OnMouseDown()
     {
         StartDragging();
-
+        Debug.Log(transform.position);
         Debug.Log("눌");
     }
 
@@ -79,8 +77,7 @@ public class DraggableRank : MonoBehaviour
     {
         isDragging = true;
 
-        dragOffset =
-            transform.position - GetMouseWorldPosition();
+        dragOffset = transform.position - GetMouseWorldPosition();
 
         // 드래그 시작 위치 저장
         lastValidPosition = transform.position;
@@ -115,11 +112,7 @@ public class DraggableRank : MonoBehaviour
             if (other == this)
                 continue;
 
-            float distance =
-                Vector2.Distance(
-                    transform.position,
-                    other.transform.position
-                );
+            float distance = Vector2.Distance(transform.position, other.transform.position);
 
             // 가까운가?
             if (distance <= mergeDistance)
