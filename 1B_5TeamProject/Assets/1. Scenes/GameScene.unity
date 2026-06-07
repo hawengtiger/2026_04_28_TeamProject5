@@ -776,7 +776,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0475da7e446465e429e2fe1674226060, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHP
-  maxHp: 2000
+  maxHp: 2100
   currentHp: 0
 --- !u!1001 &480498694
 PrefabInstance:

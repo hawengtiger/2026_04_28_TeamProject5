@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea4938c037478d040838b4ca2018ff94, type: 3}
   m_Name: ObjectSOData_Water
   m_EditorClassIdentifier: Assembly-CSharp::ObjectSOData
-  damage: 60
-  range: 0.1
-  speed: 5
+  damage: 85
+  range: 0.08
+  speed: 6

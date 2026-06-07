@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: ObjectSOData_Fire
   m_EditorClassIdentifier: Assembly-CSharp::ObjectSOData
   damage: 30
-  range: 0.2
-  speed: 3
+  range: 0.15
+  speed: 4
