@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea4938c037478d040838b4ca2018ff94, type: 3}
   m_Name: ObjectSOData_Fire
   m_EditorClassIdentifier: Assembly-CSharp::ObjectSOData
-  damage: 20
-  range: 0.1
+  damage: 30
+  range: 0.2
   speed: 3

@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: ObjectSOData_Light
   m_EditorClassIdentifier: Assembly-CSharp::ObjectSOData
   damage: 40
-  range: 0.07
+  range: 0.05
   speed: 4
