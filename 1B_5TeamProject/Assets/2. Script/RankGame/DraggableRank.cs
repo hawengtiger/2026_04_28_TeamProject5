@@ -5,7 +5,13 @@ public class DraggableRank : MonoBehaviour
     [Header("설정")]
     public int rankLevel = 1;
 
+    [Header("공격 판정")]
+    public float attackCheckRadius = 0.5f;
+
     public float dragSpeed = 30f;
+
+    [Header("공격")]
+    public bool attack = false;
 
     [Header("머지")]
     public float mergeDistance = 1f;
@@ -14,6 +20,8 @@ public class DraggableRank : MonoBehaviour
     public BoxCollider2D playArea;
 
     public bool isDragging = false;
+
+    public ObjectSOData data;
 
     private Vector3 dragOffset;
 
@@ -88,16 +96,36 @@ public class DraggableRank : MonoBehaviour
     void StopDragging()
     {
         isDragging = false;
-
         spriteRenderer.sortingOrder = 10;
 
-        // 박스 밖이면 마지막 안전 위치로 복귀
-        if (!IsInsideBox(transform.position))
+        // 마우스 뗀 위치에 Enemy가 있는지 먼저 검사
+        Collider2D enemy = Physics2D.OverlapCircle(transform.position, attackCheckRadius, LayerMask.GetMask("Default"));
+
+        if (enemy != null && enemy.CompareTag("Enemy"))
         {
+            EnemyHP enemyHP = enemy.GetComponent<EnemyHP>();
+
+            if (enemyHP != null)
+            {
+                AttackEnemy(enemyHP);
+            }
+
             transform.position = lastValidPosition;
+            return;
         }
 
+        // Enemy가 아니면 그냥 복귀
+        transform.position = lastValidPosition;
+
         CheckMerge();
+    }
+
+    void AttackEnemy(EnemyHP enemy)
+    {
+        SkillCheck.Instance.OpenSkillCheck(
+            enemy,
+            data,
+            this);
     }
 
     bool IsInsideBox(Vector3 pos)
@@ -145,16 +173,26 @@ public class DraggableRank : MonoBehaviour
     {
         rankLevel = level;
 
-        if (gameManager != null &&
-            gameManager.rankSprites.Length > level - 1)
+        if (gameManager != null)
         {
             spriteRenderer.sprite =
                 gameManager.rankSprites[level - 1];
+
+            data =
+                gameManager.rankDatas[level - 1];
         }
     }
 
     public void ReturnToOriginalPosition()
     {
         transform.position = lastValidPosition;
+    }
+
+    private void OnDestroy()
+    {
+        if (gameManager != null)
+        {
+            gameManager.ranks.Remove(this);
+        }
     }
 }

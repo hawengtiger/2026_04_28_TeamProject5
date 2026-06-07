@@ -9,6 +9,7 @@ public class RankGameManager : MonoBehaviour
     [Header("계급장")]
     public GameObject rankPrefab;
     public Sprite[] rankSprites;
+    public ObjectSOData[] rankDatas;
 
     [Header("설정")]
     public int maxRankLevel = 7;
