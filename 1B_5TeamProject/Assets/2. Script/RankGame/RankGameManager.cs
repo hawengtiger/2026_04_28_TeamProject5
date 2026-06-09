@@ -1,8 +1,16 @@
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.UI;
+using TMPro;
 
 public class RankGameManager : MonoBehaviour
 {
+    [Header("생성 버튼")]
+    public Button makeBT;
+
+    [Header("개수 텍스트")]
+    public TextMeshProUGUI objectText;
+
     [Header("생성 영역")]
     public BoxCollider2D spawnArea;
 
@@ -20,20 +28,19 @@ public class RankGameManager : MonoBehaviour
 
     void Start()
     {
-        for (int i = 0; i < 4; i++)
-        {
-            SpawnNewRank();
-        }
+        makeBT.onClick.AddListener(MakeRank);
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.D))
+        objectText.text = ranks.Count.ToString()+ " / 10";
+    }
+
+    public void MakeRank()
+    {
+        if (ranks.Count < maxRankCount)
         {
-            if (ranks.Count < maxRankCount)
-            {
-                SpawnNewRank();
-            }
+            SpawnNewRank();
         }
     }
 
