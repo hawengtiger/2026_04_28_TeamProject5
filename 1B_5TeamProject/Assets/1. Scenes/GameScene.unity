@@ -2030,9 +2030,9 @@ MonoBehaviour:
   spawnArea: {fileID: 1822306773}
   rankPrefab: {fileID: 5402175633466299535, guid: 06ebe86d7371ea242b692703cbe97ba8, type: 3}
   rankSprites:
-  - {fileID: -1970222105937173846, guid: bae12ac248182f3409c7d95af1917887, type: 3}
-  - {fileID: -6448051674078951628, guid: 5ff0bab465b3ad247ba37b1b33667f70, type: 3}
-  - {fileID: -4357823158253915379, guid: ffe246af9b6beff4d8cbe5a5e55c47c1, type: 3}
+  - {fileID: -7798030208676684631, guid: f01bb10d7d429ae45af04fcb216bc5cc, type: 3}
+  - {fileID: -8760569844744837311, guid: 7485d196226ca4d448024721bbbd05b9, type: 3}
+  - {fileID: 6154497343099271827, guid: c3ce49318ffb6544fa56846cd59f189c, type: 3}
   rankDatas:
   - {fileID: 11400000, guid: 972d60ccbf0e30944adb3079095c25c9, type: 2}
   - {fileID: 11400000, guid: 1c0262a2c1e1aa640b29c6cfcc17d913, type: 2}
