@@ -14,5 +14,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/1. Scenes/Splash.unity
     guid: 3a575d7d0fcd4a14e8b066d9255b83b5
+  - enabled: 1
+    path: Assets/1. Scenes/ClearScene.unity
+    guid: b498dcbc07b1c094a8ec842d0e04646e
+  - enabled: 1
+    path: Assets/1. Scenes/GameOverScene.unity
+    guid: 1f8ef8dd1eb42924fbe85b3d26a9f749
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
