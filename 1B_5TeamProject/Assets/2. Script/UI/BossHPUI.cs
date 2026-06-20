@@ -26,8 +26,7 @@ public class BossHPBar : MonoBehaviour
         if (boss == null)
             return;
 
-        hpFill.fillAmount =
-            (float)boss.currentHp / boss.maxHp;
+        hpFill.fillAmount = (float)boss.currentHp / boss.maxHp;
     }
 
     public void SetBoss(EnemyHP target)
