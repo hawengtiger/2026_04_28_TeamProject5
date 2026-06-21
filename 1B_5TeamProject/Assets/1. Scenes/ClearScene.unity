@@ -204,7 +204,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1475217388}
         m_TargetAssemblyTypeName: GoToUI, Assembly-CSharp
-        m_MethodName: GoToScene
+        m_MethodName: Main
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

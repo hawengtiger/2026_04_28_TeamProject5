@@ -21,6 +21,12 @@ public class EnemyHP : MonoBehaviour
         currentHp -= damage;
         currentHp = Mathf.Clamp(currentHp, 0, maxHp);
 
+        if (DamageTracker.Instance != null)
+        {
+            DamageTracker.Instance.AddDamage(damage);
+            DamageTracker.Instance.Save();
+        }
+
         Debug.Log("Enemy 피격! 데미지: " + damage);
         Debug.Log("Enemy 현재 체력: " + currentHp);
 
@@ -32,6 +38,11 @@ public class EnemyHP : MonoBehaviour
 
     void Die()
     {
+        if (DamageTracker.Instance != null)
+        {
+            DamageTracker.Instance.Save();
+        }
+
         if (BossHPBar.Instance != null)
         {
             BossHPBar.Instance.ClearBoss();

@@ -9,19 +9,31 @@ using UnityEngine.SceneManagement;
 public class ScreenUI : MonoBehaviour
 {
     public GameObject settingPanel;
-    
-    public Button start,setting,quit;
+    public GameObject modPanel;
 
-    public string scene;
+    public Button start,normal_start, dps_start, setting,quit;
+
+    public string[] scene;
 
     private void Start()
     {
         Reset();
     }
 
-    public void StartGame()
+    public void StartGame(bool isActive)
     {
-        SceneManager.LoadScene(scene);
+        modPanel.SetActive(isActive); 
+    }
+
+
+    public void NormalGame()
+    {
+        SceneManager.LoadScene(scene[0]);
+    }
+
+    public void DPSGame()
+    {
+        SceneManager.LoadScene(scene[1]);
     }
 
     /// <summary>
@@ -51,8 +63,21 @@ public class ScreenUI : MonoBehaviour
     private void Reset()
     {
         settingPanel.SetActive(false);
-        start.onClick.AddListener(StartGame);
+        modPanel.SetActive(false);
+
+        start.onClick.AddListener(() => StartGame(true));
+        normal_start.onClick.AddListener(NormalGame);
+        dps_start.onClick.AddListener(DPSGame);
         quit.onClick.AddListener(GameQuit);
         setting.onClick.AddListener(() => Setting(true));
+
+        if (PlayerPrefs.HasKey("TotalDamage"))
+        {
+            DamageTracker.Instance.DeleteSaveFile();
+        }
+        else
+        {
+            return;
+        }
     }
 }
