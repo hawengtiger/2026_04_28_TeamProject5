@@ -76,7 +76,7 @@ public class SkillCheck : MonoBehaviour
 
         ResetPointPosition();
 
-        target.localScale = new Vector3(attackData.range, transform.localScale.y, transform.localScale.z);
+        target.localScale = new Vector3(attackData.range, 1, transform.localScale.z);
 
         // 포인트 속도
         moveSpeed = attackData.speed;
@@ -114,30 +114,6 @@ public class SkillCheck : MonoBehaviour
         }
 
         CloseSkillCheck();
-    }
-
-    int GetDamageByRank(int level)
-    {
-        if (level == 1)
-            return 20;
-        else if (level == 2)
-            return 40;
-        else if (level == 3)
-            return 60;
-        else
-            return 80;
-    }
-
-    void SetTargetSizeByRank(int level) //초록 지점 크기
-    {
-        if (level == 1)
-            target.localScale = new Vector3(0.1f, 1f, 1f);
-        else if (level == 2)
-            target.localScale = new Vector3(0.07f, 1f, 1f);
-        else if (level == 3)
-            target.localScale = new Vector3(0.05f, 1f, 1f);
-        else
-            target.localScale = new Vector3(1f, 1f, 1f);
     }
 
     void ResetPointPosition()
