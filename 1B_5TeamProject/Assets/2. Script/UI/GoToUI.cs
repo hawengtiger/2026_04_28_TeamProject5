@@ -32,5 +32,14 @@ public class GoToUI : MonoBehaviour
     public void Main(string scene)
     {
         SceneManager.LoadScene(scene);
+
+        if (PlayerPrefs.HasKey("TotalDamage"))
+        {
+            DamageTracker.Instance.DeleteSaveFile();
+        }
+        else
+        {
+            return;
+        }
     }
 }

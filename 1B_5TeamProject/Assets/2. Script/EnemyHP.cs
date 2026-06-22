@@ -1,10 +1,12 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class EnemyHP : MonoBehaviour
 {
     public int maxHp = 100;
     public int currentHp;
+    public TextMeshProUGUI hpTxT;
 
     private void Start()
     {
@@ -14,10 +16,19 @@ public class EnemyHP : MonoBehaviour
         {
             BossHPBar.Instance.SetBoss(this);
         }
+
+        Text();
+    }
+
+    public void Update()
+    {
+
     }
 
     public void TakeDamage(int damage)
     {
+        CameraShakeEffect.Instence.PlayCameraShake();
+
         currentHp -= damage;
         currentHp = Mathf.Clamp(currentHp, 0, maxHp);
 
@@ -34,6 +45,7 @@ public class EnemyHP : MonoBehaviour
         {
             Die();
         }
+        Text();
     }
 
     void Die()
@@ -55,5 +67,13 @@ public class EnemyHP : MonoBehaviour
 
         Debug.Log("Enemy »ç¸Á");
         Destroy(gameObject);
+    }
+
+    public void Text()
+    {
+        if (currentHp <= 0 || hpTxT == null)
+            return;
+        
+        hpTxT.text = currentHp.ToString() + " / " + maxHp.ToString();
     }
 }
