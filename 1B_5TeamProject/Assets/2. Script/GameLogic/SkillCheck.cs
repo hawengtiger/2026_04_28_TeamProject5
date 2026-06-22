@@ -62,12 +62,15 @@ public class SkillCheck : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
+            SoundManager.Instance.PlaySFX("Attack");
             TryAttack();
         }
     }
 
     public void OpenSkillCheck(EnemyHP enemy, ObjectSOData data, DraggableRank rank)
     {
+        SoundManager.Instance.PlaySFX("Hit");
+
         targetEnemy = enemy;
         attackData = data;
         currentRank = rank;

@@ -306,17 +306,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SoundManager
   musicSounds:
   - name: main
-    clip: {fileID: 8300000, guid: 80e858f4ded4488469a7d3be65445dbf, type: 3}
+    clip: {fileID: 8300000, guid: 49b9f1a3e911dc041827aba152e4388d, type: 3}
   - name: Lv1
     clip: {fileID: 8300000, guid: d864371484800a84f82abbbfe793f688, type: 3}
   - name: Fin
     clip: {fileID: 8300000, guid: 06eaf99ad35549c4bb206d307936b9c1, type: 3}
   sfxSounds:
   - name: BT
-    clip: {fileID: 8300000, guid: 30ad71b185823f141a7040806ceea784, type: 3}
-  - name: Change
-    clip: {fileID: 8300000, guid: 4e3720c649cbe4c48aa084fccacf45a7, type: 3}
-  - name: Item
-    clip: {fileID: 8300000, guid: 162d48738c553f64899f4b219ac3dd6e, type: 3}
+    clip: {fileID: 8300000, guid: 675ac40894ad5d042aebf385c88c4bbf, type: 3}
+  - name: Make
+    clip: {fileID: 8300000, guid: 22c14194e92ba0e4685c478fc184b029, type: 3}
+  - name: Merge
+    clip: {fileID: 8300000, guid: 5380c193611cb5840882b6b9dfec3f4c, type: 3}
+  - name: Hit
+    clip: {fileID: 8300000, guid: 4bcc0570be8575641ba38dcb5a4669ae, type: 3}
+  - name: Attack
+    clip: {fileID: 8300000, guid: 0773df9d99c171c409fd4132bf3b3687, type: 3}
   musicSource: {fileID: 3633061369831715444}
   sfxSource: {fileID: 6436592022395909622}

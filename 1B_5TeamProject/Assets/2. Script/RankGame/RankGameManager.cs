@@ -49,6 +49,8 @@ public class RankGameManager : MonoBehaviour
         if (ranks.Count >= maxRankCount)
             return;
 
+        SoundManager.Instance.PlaySFX("Make");
+
         Vector2 spawnPos = GetRandomPosition();
 
         GameObject obj = Instantiate(rankPrefab, spawnPos, Quaternion.identity);
@@ -96,6 +98,8 @@ public class RankGameManager : MonoBehaviour
         }
 
         target.SetRankLevel(newLevel);
+
+        SoundManager.Instance.PlaySFX("Merge");
 
         ranks.Remove(from);
 

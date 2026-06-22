@@ -20,11 +20,6 @@ public class EnemyHP : MonoBehaviour
         Text();
     }
 
-    public void Update()
-    {
-
-    }
-
     public void TakeDamage(int damage)
     {
         CameraShakeEffect.Instence.PlayCameraShake();
@@ -45,6 +40,7 @@ public class EnemyHP : MonoBehaviour
         {
             Die();
         }
+
         Text();
     }
 
@@ -71,7 +67,7 @@ public class EnemyHP : MonoBehaviour
 
     public void Text()
     {
-        if (currentHp <= 0 || hpTxT == null)
+        if (hpTxT == null)
             return;
         
         hpTxT.text = currentHp.ToString() + " / " + maxHp.ToString();
